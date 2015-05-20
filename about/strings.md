@@ -6,7 +6,7 @@ Strings are objects which are enclosed in in quotation marks
 
 You create strings by typing text between quote marks.
 ```ruby
-one_string = "like this"
+"Stringy" #=> "Stringy"
 ```
 or by passing the characters (in quotes) to String.new
 ```ruby
