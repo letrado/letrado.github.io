@@ -8,16 +8,13 @@ You create strings by typing text between quote marks.
 ```ruby
 "Stringy" #=> "Stringy"
 ```
-or by passing the characters (in quotes) to String.new
-```ruby
-other_string = String.new("as thus")
-```
 A string can be initialized surrounded by either double quote or single quote characters.
 
 ## Methods
 
 Here are some methods you can use on strings:
 ```ruby
+String.new("Here is a new string.") #=> "Here is a new string."
 "Words".length #=> 5
 "Words".upcase #=> "WORDS"
 "WORDS".downcase #=> "words"
@@ -32,32 +29,40 @@ Here are some methods you can use on strings:
 You can add strings together like this:
 ```ruby
 "I am writing" + "a string." #=> "I am writinga string."
-"I am writing " + "a string." #
-"Ho! Ho! Ho!" + " Merry Christmas!" #=> "Ho! Ho! Ho! Merry Christmas!"
+"I am writing " + "a string." #=> "I am writing a string."
 ```
+You can also multipy strings, like this:
+```ruby
+"repeat " * 4 #=> "repeat repeat repeat repeat "
+```
+
 ## Special Properties
 
 ###Interpolation
 
-A double-quoted string can have Ruby code embedded in it with the character sequence #{}. 
-The embedded code will get evaluated and the return value inserted into the string.
+You can insert objects like variables into strings, like in the example, it is called interpolation.
 ```ruby
-"8 * 9 = #{8 * 9}" #=> "8 * 9 = 72"
-name = "Bob"
-"Hi there #{name}" #=> "Hi there Bob"
+name = "Mark"
+food = "Chinese"
+"#{name} wants #{food} for dinner." #=> "Mark wants Chinese for dinner."
 ```
 ###Escape Characters
 
-The \ character can be used to change the meaning of the character following it in a (double-quoted) string.
-* `\n` is a `newline`
-* `\t` is a `tab`
-* `\#{}` prevents interpolation
+If you use the \ character in a string, it "escapes", or ignores the character after it.  So if you try to use before the # sign in the example above, it will prevent interpolation.
+```ruby
+"#\{name} wants \#{food} for dinner." #=> "\#{name} wants \#{food} for dinner."
+```
+You can also use escape t for the tab function in formatting as well as for the n for a new line like this:
+*  "\t\t\t"  will tab three times
+*  "\n" will creat a new line.
 
 ###Accessing Elements
 
-Characters in a string can be accessed with [] characters, similar to an array.
+You can access characters in a string like this by passing it an index number much like in an array.
 ```ruby
-"the beginning"[0] #=> "t"
+"groove is in the heart"[4] #=> "v"
+"platypus"[-1] #=> "s"
+"code school is fun"[0] #=> "c"
 ```
 
 ##To Learn More
